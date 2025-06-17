@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v2.1.7] - 2025-06-17
+### Changed
+- Improved UI/UX in BenchFragment
+
 ## [v2.1.3] - 2025-05-15
 ### Added
 - Initial public release of full-featured APK (Benchmark + Mining)

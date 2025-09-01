@@ -34,11 +34,30 @@ This repository serves as the **official APK distribution channel** for Benchmin
 
 ---
 
+## System Requirements
+
+- Android 6.0 (API 23) or higher
+- 2GB RAM minimum, 4GB recommended
+- 100MB free storage space
+
+## Permissions Required
+
+- Internet access (mining pool connection)
+- Device state access (hardware detection)
+- Prevent device from sleeping (continuous mining)
+
 ## Installation Instructions
 
-1. Download the `.apk` file from the Releases section above
+1. Download the latest `.apk` file from [Releases](../../releases)
 2. On your Android device, allow **"Install unknown apps"**
 3. Run and install the `.apk` file
+
+## Quick Start
+
+1. Open app and go to Info tab to check device compatibility
+2. Run benchmark first to test your device performance
+3. Configure mining preset in Miner tab with pool settings
+4. Start mining and monitor real-time performance
 
 ---
 
@@ -62,6 +81,22 @@ Google Play link: [Benchminer (Benchmark only)](https://play.google.com/store/ap
 When using Benchminer for mining, 3 percent of the total mining time is allocated to the developer.  
 For example, if a user mines for 100 minutes, approximately 3 minutes will be used to mine on behalf of the developer.  
 This fee supports ongoing development and maintenance of the project.
+
+---
+
+## FAQ
+
+**Q: Is this app safe to use?**
+A: Yes, but mining may cause device heating and increased battery drain. Monitor your device temperature during use.
+
+**Q: How much can I earn from mining?**
+A: Earnings depend on your device performance, algorithm, and current cryptocurrency prices. Use benchmark results as a performance indicator.
+
+**Q: Why is there a developer fee?**
+A: The 3% fee supports ongoing development and maintenance. It operates transparently during mining sessions.
+
+**Q: What's the difference from Google Play version?**
+A: Google Play version includes only benchmark features due to policy restrictions. This version includes full mining capabilities.
 
 ---
 

@@ -228,3 +228,12 @@ Cluster mode allows you to distribute mining jobs across multiple devices in the
 - **Insufficient memory**: Try CPU backend instead of GPU
 - **Device overheating**: Take breaks between mining sessions
 - **Restart app**: Force-close and reopen Benchminer
+
+---
+
+## 9. Additional Mining Tutorials
+
+For detailed guides on specific cryptocurrencies:
+- **Bitcoin (SHA256d) Mining**: See [TUTORIAL_BITCOIN.md](TUTORIAL_BITCOIN.md)
+- **Verushash Mining**: Covered in Section 5 above (recommended for beginners)
+- **Ghostrider Mining**: Similar to Verushash setup, but CPU-only

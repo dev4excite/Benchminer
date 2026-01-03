@@ -1,107 +1,80 @@
-# Benchminer Project Overview
+# Benchminer
 
-**Benchminer** is a mobile tool for Android devices that allows users to measure the performance of various hash algorithms (Benchmark) and to perform actual mining by connecting to a Stratum-compatible mining pool.  
-This repository serves as the **official APK distribution channel** for Benchminer, providing the **full-featured version** that includes both Benchmark and Mining functionalities.
+Cryptocurrency mining and benchmarking app for Android devices.
 
-> Note: The version available on Google Play includes only the Benchmark feature, as Mining is restricted by Google Play policies.
+This repository provides the **Full Version** with both benchmark and mining features.
 
----
+## Download
 
-## Distributed Files
+Download the latest APK from the [Releases](https://github.com/dev4excite/Benchminer/releases) tab.
 
-- `benchminer-vX.X.X-full.apk`: Official release APK with both Benchmark and Mining features
-- For version history and details, see the Releases tab on GitHub
+## Features
 
----
+- **Benchmarking**: Measure hashrate for each algorithm on your device
+- **Profit Estimation**: View estimated monthly earnings based on measured hashrate
+- **Mining**: Connect to mining pools and mine cryptocurrency
+- **Cluster Mode**: Connect multiple devices for distributed mining
 
-## Key Features
+## Supported Algorithms
 
-- Measure hashrate performance for multiple hash algorithms
-- Perform mining using CPU or GPU backends
-- Real-time session reporting and performance summary
+| Algorithm | CPU | OpenCL | Vulkan | Metal | Cuda |
+|-----------|-----|--------|--------|-------|------|
+| SHA256d | O | - | - | - | - |
+| Verushash | O | O | - | - | - |
+| Ghostrider | O | - | - | - | - |
+| RandomX | O | - | - | - | - |
 
----
+> **Note:** RandomX is supported from v3.x.x.
 
-## Supported Algorithms and Backends (as of v2.x.x)
-
-| Algorithm   | CPU | OpenCL | Vulkan | Metal | Cuda |
-|-------------|:---:|:------:|:------:|:-----:|:----:|
-| Sha256d     | O   |        |        |       |      |
-| Verushash   | O   |   O    |        |       |      |
-| Ghostrider  | O   |        |        |       |      |
-
-> Availability of GPU backends (OpenCL, Vulkan, Metal, Cuda) depends on device and platform support.
-
----
+GPU backend support (OpenCL, Vulkan, Metal, Cuda) varies by device. Check the **Info** tab in the app.
 
 ## System Requirements
 
-- Android 6.0 (API 23) or higher
-- 2GB RAM minimum, 4GB recommended
-- 100MB free storage space
+- Android 6.0 (Marshmallow) or higher
+- Minimum 2GB RAM
+- 100MB+ storage space
 
-## Permissions Required
+## Permissions
 
 - Internet access (mining pool connection)
-- Device state access (hardware detection)
-- Prevent device from sleeping (continuous mining)
+- Network state (connection monitoring)
 
-## Installation Instructions
+## Installation
 
-1. Download the latest `.apk` file from [Releases](../../releases)
-2. On your Android device, allow **"Install unknown apps"**
-3. Run and install the `.apk` file
+1. Download the latest APK from [Releases](https://github.com/dev4excite/Benchminer/releases)
+2. Enable "Unknown sources" installation (Settings > Security)
+3. Install the APK
 
 ## Quick Start
 
-1. Open app and go to Info tab to check device compatibility
-2. Run benchmark first to test your device performance
-3. Configure mining preset in Miner tab with pool settings
-4. Start mining and monitor real-time performance
+1. **Run Benchmark** → Measure performance for each algorithm in the Bench tab
+2. **Choose a Coin** → Decide which coin to mine based on profitability results
+3. **Prepare Wallet/Pool** → Set up a wallet and find a mining pool for your chosen coin
+4. **Start Mining** → Configure settings in the Miner tab and start
 
----
-
-## User Guide
-
-For detailed instructions on how to configure and run Benchminer, please refer to the user guide below.  
-[USER_GUIDE.md](USER_GUIDE.md)
-
----
+For detailed instructions, see [USER_GUIDE.md](USER_GUIDE.md).
 
 ## Google Play Version
 
-Due to policy limitations, the Google Play version of Benchminer includes only the Benchmark feature and excludes mining.
+The [Google Play version](https://play.google.com/store/apps/details?id=com.dev4excite.benchminer.bench) includes **benchmark features only** due to policy restrictions. Download the Full Version APK from this repository to use mining features.
 
-Google Play link: [Benchminer (Benchmark only)](https://play.google.com/store/apps/details?id=com.dev4excite.benchminer.bench)
+## Developer Fee
 
----
-
-## Developer Fee (Dev Fee)
-
-When using Benchminer for mining, 3 percent of the total mining time is allocated to the developer.  
-For example, if a user mines for 100 minutes, approximately 3 minutes will be used to mine on behalf of the developer.  
-This fee supports ongoing development and maintenance of the project.
-
----
+A **3%** developer fee is applied to mining time. This supports ongoing development and maintenance.
 
 ## FAQ
 
-**Q: Is this app safe to use?**
-A: Yes, but mining may cause device heating and increased battery drain. Monitor your device temperature during use.
+**Q: Is this app safe?**
+A: The app only performs mining operations and does not collect personal information or harm your device. Wallet addresses are used solely for pool connections and stored locally on your device.
 
-**Q: How much can I earn from mining?**
-A: Earnings depend on your device performance, algorithm, and current cryptocurrency prices. Use benchmark results as a performance indicator.
+**Q: Can I make money mining on a mobile device?**
+A: Mobile devices have lower hashrates compared to dedicated mining hardware. Check the estimated profit from benchmark results and consider electricity costs before deciding.
 
-**Q: Why is there a developer fee?**
-A: The 3% fee supports ongoing development and maintenance. It operates transparently during mining sessions.
-
-**Q: What's the difference from Google Play version?**
-A: Google Play version includes only benchmark features due to policy restrictions. This version includes full mining capabilities.
-
----
+**Q: What's the difference from the Google Play version?**
+A: The Google Play version only provides benchmark features due to policy restrictions. The Full Version from this repository includes mining and cluster features.
 
 ## License
 
-This APK is provided by dev4excite under a custom license.  
-Usage is allowed for both personal and commercial purposes, but redistribution and modification are prohibited.  
-See [LICENSE](LICENSE) for full terms.
+Copyright (c) dev4excite. All rights reserved.
+
+This software may be used for personal and commercial purposes. Redistribution and modification are not permitted. See the [LICENSE](LICENSE) file for details.

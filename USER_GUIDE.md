@@ -1,239 +1,229 @@
-# USER GUIDE
+# Benchminer User Guide
 
-## 1. App Overview and Main Navigation
+This guide will help you get started with cryptocurrency mining using Benchminer.
 
-The Benchminer app features five primary tabs located at the bottom of the screen:
+## Table of Contents
 
-- **Info**: View device specifications and supported algorithms
-- **Bench**: Select and run benchmark tests
-- **Miner**: Configure and launch mining sessions
-- **Cluster**: Distributed mining using multiple devices over a local network
-- **About**: View version and license information
+1. [Run Benchmark First](#1-run-benchmark-first)
+2. [Prepare Wallet and Mining Pool](#2-prepare-wallet-and-mining-pool)
+3. [Start Mining](#3-start-mining)
+4. [Troubleshooting](#4-troubleshooting)
 
-![navigation](images/navigation_bar.png)
-
----
-
-## 2. Info - Device Specifications
-
-This page displays technical details of your device including model, OS version, CPU, RAM, and GPU.  
-It also shows a compatibility table listing which algorithms are supported on your device by CPU or GPU.
-
-![info](images/info_device_support.png)
+**Advanced**
+- [Cluster Mode](#cluster-mode)
 
 ---
 
-## 3. Bench - Running Benchmarks
+## 1. Run Benchmark First
 
-1. Select one or more benchmark configurations, combining an algorithm with a compute backend (CPU/GPU).
-   - Example: verushash (CPU - Multi), sha256d (CPU - Single)
-   - Use **Select All** to run all benchmarks.
-2. Tap the **RUN BENCHMARK** button to begin testing.
-3. Each selected test takes approximately **1 minute** to complete.
-4. After all tests finish, the app displays performance scores and stores average hashrates for future reference.
+After installing the app, run benchmarks to check your device's mining performance.
 
-![benchmark](images/benchmark_selection.png)
+### 1.1 Select Benchmark Options
 
----
+1. Open the app and tap the **Bench** tab
+2. You'll see a list of available algorithms grouped by backend (CPU, GPU)
+3. Check the algorithms you want to benchmark, or use **Select All**
+4. Tap the **Run Benchmark** button
 
-## 4. Getting Started with Mining
+Each benchmark takes approximately 1 minute per algorithm.
 
-### What is Cryptocurrency Mining?
+### 1.2 Check Results and Profitability
 
-Mining is the process of validating cryptocurrency transactions and earning rewards. Benchminer supports mining these cryptocurrencies:
+After benchmarks complete, you'll see:
+- **Hashrate:** Your device's mining speed for each algorithm
+- **Estimated Profit:** Expected monthly earnings in USD
 
-- **Verushash Algorithm**: Mines Verus Coin (VRSC) - Recommended for beginners
-- **Ghostrider Algorithm**: Mines Raptoreum (RTM) - CPU intensive
-- **Sha256d Algorithm**: Mines Bitcoin and similar coins - Less profitable on mobile
+Tap on any algorithm to expand and see the list of coins you can mine with that algorithm, along with their individual profit estimates.
 
-### Before You Start Mining
+> **Note:** The profit shown is the estimated **monthly** earnings based on your device's measured hashrate and current coin prices.
 
-**Step 1: Get a Wallet Address**
-- Search online for "[algorithm name] wallet" (e.g., "verushash wallet", "raptoreum wallet")
-- Create a wallet and copy your receiving address
-- Verushash addresses start with "R", Raptoreum with "R", Bitcoin with "1" or "3"
+### 1.3 Choose a Coin to Mine
 
-**Step 2: Choose a Mining Pool**
-- Search for "[algorithm name] mining pool" 
-- Look for pools with good reputation and low fees
-- Note the pool's stratum URL and port from their "Getting Started" page
+Based on the profitability results, decide which coin you want to mine. Consider:
+- Which algorithm shows the highest profit on your device
+- Which coins interest you
+- Current market conditions
 
-**Step 3: Run Benchmark First**
-- Use the Bench tab to test your device performance
-- This helps you choose the best algorithm and backend for your device
+<!-- Screenshot: Benchmark screen showing profit estimates -->
+![Benchmark Screen](images/bench_screen.png)
 
 ---
 
-## 5. Miner - Detailed Setup Guide
+## 2. Prepare Wallet and Mining Pool
 
-### Creating Your First Preset
+Once you've chosen a coin to mine, you need to prepare two things: a wallet and a mining pool.
 
-**1. Tap CREATE to add a new preset**
+### 2.1 Create a Wallet
 
-**Preset Title**
-- Give your preset a memorable name
-- Examples: "Verus Mining", "RTM Pool1", "My Bitcoin"
-- This is just for your reference
+You need a wallet to receive your mining rewards.
 
-**Algorithm Name**
-- **For beginners: Choose "verushash"** - works on both CPU and GPU
-- **ghostrider**: CPU only, more complex
-- **sha256d**: CPU only, lower profitability on mobile devices
+Search **"[Coin Name] official wallet"** on Google to find and download the official wallet for your chosen coin.
 
-**Pool URL - Most Important Setting**
-1. Visit your chosen mining pool's website
-2. Find their "Getting Started" or "How to Mine" page
-3. Copy the Stratum URL exactly as shown
-4. Common formats:
-   - `stratum+tcp://pool.example.com:4444`
-   - `stratum+ssl://secure-pool.example.com:4445`
-   - Some pools use just `pool.example.com:4444`
+> **Important:** Wallets contain sensitive information. Always download from official sources only. Keep your recovery phrase safe and never share it with anyone.
 
-**Wallet Address**
-- Paste your wallet address here (the long string from Step 1 above)
-- **Double-check this carefully** - wrong address = lost rewards
-- Must match the algorithm (Verushash wallets for verushash, etc.)
+After creating your wallet, copy your **wallet address** - you'll need it for mining setup.
 
-**Worker Name (Optional)**
-- Identifies this device if you mine from multiple devices
-- Examples: "phone", "tablet", "android1"
-- Leave blank if you're only using one device
+### 2.2 Find a Mining Pool
 
-**Password (Optional)**
-- Most pools use "x" or leave this blank
-- Check your pool's documentation if unsure
-### Complete Example Setup
+Solo mining on a mobile device is not practical. Join a mining pool to combine your hashrate with other miners and receive regular payouts.
 
-Here's a real example for Verushash mining:
+Search **"[Coin Name] mining pool"** on Google to find available pools.
 
-```
-Preset Title: "My Verus Mining"
-Algorithm: verushash
-Pool URL: stratum+tcp://pool.verus.io:9999
-Wallet Address: RYourLongVerusWalletAddressHere123456789abcdef
-Worker Name: phone (or leave blank)
-Password: x (or leave blank)
-```
+When selecting a pool, consider:
+- Pool fee (typically 0.5% - 2%)
+- Minimum payout threshold
+- Server location (closer = lower latency)
 
-**2. Choose Compute Backend**
-- **CPU**: Available on all devices, good for ghostrider
-- **OpenCL (GPU)**: Only for verushash, better performance if available
-- **Vulkan/Metal/Cuda**: Device dependent, shown only if supported
-- If unsure, start with CPU
-
-**3. Tap START MINING**
-- The app connects to the pool using your settings
-- Wait a few seconds for connection to establish
-- Mining will begin automatically once connected
-
-**4. Monitor Your Mining**
-The app displays real-time information:
-- **Hashrate**: Your mining speed (higher is better)
-- **Shares**: Successful work submissions to the pool
-- **Errors**: Connection or validation issues (should be low)
-- **Algorithm & Pool**: Confirms your settings are active
-
-![miner_empty](images/miner_empty.png)
-![preset_edit](images/preset_edit.png)
-![miner_ready](images/miner_ready.png)
-![miner_running](images/miner_running.png)
+After choosing a pool, you'll need:
+- **Stratum URL:** The pool's server address (e.g., `stratum+tcp://pool.example.com:3333`)
+- **Any specific requirements:** Some pools require specific worker name formats
 
 ---
 
-## 6. Cluster - Distributed Mining Mode
+## 3. Start Mining
 
-Cluster mode allows you to distribute mining jobs across multiple devices in the same local network.
+Now you have everything ready. Let's configure and start mining.
 
-### Cluster Server Mode
+### 3.1 Configure Mining Settings
 
-- Acts as a central job coordinator
-- Connects to a Stratum pool and distributes mining jobs to other devices
-- Does not mine itself
-- Required settings:
-  - **Select a Stratum preset**
-  - **Listening Port**: Port for incoming node connections
-  - **Local IP Address**: Auto-detected for display
+1. Tap the **Miner** tab
+2. Fill in the following fields:
 
-![cluster_server](images/cluster_server.png)
+| Field | Description | Example |
+|-------|-------------|---------|
+| **Algorithm** | Select the algorithm for your chosen coin | `verushash` |
+| **Stratum URL** | Pool server address (from your pool's website) | `stratum+tcp://pool.example.com:3333` |
+| **Wallet Address** | Your wallet address | `RKjfm8pY2bZ...` |
+| **Worker Name** | Name to identify this device (optional) | `my_phone` |
+| **Worker Password** | Pool password if required (optional, usually `x`) | `x` |
 
-### Cluster Node Mode
+### 3.2 Select Backend
 
-- Connects to a Cluster Server and performs mining work assigned by the server
-- Required settings:
-  - **Server IP**: IP address of the Cluster Server
-  - **Server Port**: Must match the server’s listening port
-  - **Nickname**: Friendly name to identify the device in the cluster
+Choose which hardware to use:
+- **CPU:** Enable to use your device's processor
+- **GPU:** Enable to use graphics processor (if supported)
 
-![cluster_node](images/cluster_node.png)
+Check the **Info** tab to see which backends your device supports for each algorithm.
+
+<!-- Screenshot: Miner tab with settings filled in -->
+![Miner Setup](images/miner_setup.png)
+
+### 3.3 Start and Monitor
+
+1. Tap **Start Mining**
+2. The monitoring screen shows:
+   - Current mining status and elapsed time at the top
+   - **Hashrate:** Current mining speed with history chart
+   - **Shares:** Accepted work submissions
+   - **Errors:** Rejected or failed submissions
+
+<!-- Screenshot: Mining monitor showing hashrate and stats -->
+![Mining Running](images/miner_running.png)
+
+3. To stop mining, tap the **Stop** button or press the back button
+
+> **Note:** Mining only runs while the app is in the foreground. If you switch to another app or lock your screen, mining will stop automatically.
+
+### 3.4 Verify on Pool Website
+
+After mining for a few minutes, verify your connection on your pool's website:
+1. Go to your pool's dashboard
+2. Enter your wallet address
+3. Check that your worker is connected and shares are being submitted
+4. Monitor your pending balance and estimated payout
 
 ---
 
-## 7. Preset Management Tips
+## 4. Troubleshooting
 
-- The same preset list is shared between Miner and Cluster modes
-- Up to **5 presets** can be stored
-- Use the **+** button to add a new preset
-- Presets can be edited or deleted anytime and persist after app restarts
+### Connection Issues
 
-![preset_slots](images/preset_slots.png)
-
----
-
-## 8. Troubleshooting Guide - Enhanced
-
-### Common Setup Issues
-
-**"Mining won't start" or "Connection failed"**
-- **Check Pool URL format**: Must include `stratum+tcp://` or `ssl://` prefix
-- **Verify pool is online**: Visit the pool website to check status
-- **Test internet connection**: Try browsing a website
-- **Check firewall/VPN**: Some networks block mining connections
-
-**"Invalid address" or "Address rejected"**
-- **Algorithm mismatch**: Ensure wallet matches algorithm (Verushash wallet for verushash mining)
-- **Copy-paste error**: Re-copy wallet address from your wallet app
-- **Wrong address format**: Bitcoin addresses look different from Verushash addresses
-
-**"GPU backend doesn't work"**
-- **Algorithm limitation**: Only verushash supports GPU (OpenCL)
-- **Device compatibility**: Not all devices have OpenCL support
-- **Try CPU instead**: CPU works on all devices for all algorithms
-
-**"Very low hashrate" or "Zero performance"**
-- **Wrong backend selected**: Try switching between CPU and GPU
-- **Device overheating**: Let device cool down and try again
-- **Background apps**: Close other apps to free up resources
-- **Power saving mode**: Disable battery optimization for Benchminer
-
-### Connection and Pool Issues
-
-**"Pool rejected shares"**
-- **Outdated pool information**: Check if pool changed their settings
-- **Worker name conflicts**: Try changing or removing worker name
-- **Pool maintenance**: Try a different pool temporarily
-
-**"High error rate"**
-- **Network instability**: Check WiFi signal strength
-- **Pool overloaded**: Try mining during off-peak hours
-- **Wrong pool port**: Double-check port number in pool documentation
+| Problem | Solution |
+|---------|----------|
+| "Connection failed" | Check internet connection and verify Stratum URL is correct |
+| "Authentication failed" | Verify wallet address is valid for the selected coin |
+| No shares submitted | Wait a few minutes; share frequency depends on difficulty and hashrate |
 
 ### Performance Issues
 
-**"Mining stops after a while"**
-- **Battery optimization**: Disable battery optimization for Benchminer in Android settings
-- **Thermal throttling**: Device automatically slows down when hot
-- **Memory issues**: Close other apps to free up RAM
+| Problem | Solution |
+|---------|----------|
+| Low hashrate | Close other apps, disable battery saver mode |
+| Device overheating | Take breaks to prevent thermal throttling |
+| App crashes | Free up RAM by closing background apps |
+| Battery draining fast | Normal for mining; connect to power for extended sessions |
 
-**"App crashes during mining"**
-- **Insufficient memory**: Try CPU backend instead of GPU
-- **Device overheating**: Take breaks between mining sessions
-- **Restart app**: Force-close and reopen Benchminer
+### Tips for Best Results
+
+- Keep the app in foreground for best performance
+- Connect to power when mining for extended periods
+- Monitor device temperature
+- Start with short sessions to test stability
 
 ---
 
-## 9. Additional Mining Tutorials
+## Advanced
 
-For detailed guides on specific cryptocurrencies:
-- **Bitcoin (SHA256d) Mining**: See [TUTORIAL_BITCOIN.md](TUTORIAL_BITCOIN.md)
-- **Verushash Mining**: Covered in Section 5 above (recommended for beginners)
-- **Ghostrider Mining**: Similar to Verushash setup, but CPU-only
+### Cluster Mode
+
+If you're mining with multiple devices, cluster mode helps you manage them efficiently.
+
+#### How Cluster Mode Works
+
+- **Server Device:** Manages communication with the mining pool and controls all connected nodes. The server does not mine directly.
+- **Node Devices:** Connect to the server and perform actual mining work.
+
+All devices must be on the same local network (WiFi).
+
+#### Server Setup
+
+1. Tap the **Cluster** tab
+2. Select **Server Mode**
+3. Configure mining settings:
+   - Algorithm
+   - Stratum URL
+   - Wallet address
+   - Worker name (optional)
+4. Set the **Listening Port** (default works for most cases)
+5. Note the **Local IP Address** displayed on screen
+6. Tap **Start Cluster**
+
+Share the IP address and port with your node devices.
+
+<!-- Screenshot: Cluster server mode setup -->
+![Cluster Server Setup](images/cluster_server.png)
+
+#### Node Setup
+
+On each node device:
+
+1. Tap the **Cluster** tab
+2. Select **Node Mode**
+3. Enter connection info:
+   - **Cluster Server IP:** IP address shown on the server device
+   - **Cluster Server Port:** Port number set on the server
+   - **Nickname:** A name to identify this node (optional)
+4. Tap **Connect to Cluster**
+
+Once connected, the node will start mining automatically.
+
+<!-- Screenshot: Cluster node mode setup -->
+![Cluster Node Setup](images/cluster_node.png)
+
+#### Monitor Cluster Mining
+
+- On the server device, you can see all connected nodes and their status
+- Check your pool's website to verify the combined hashrate from all nodes
+- The pool will show your worker with the total hashrate from all cluster nodes
+
+#### Cluster Connection Issues
+
+| Problem | Solution |
+|---------|----------|
+| Node can't connect to server | Ensure both devices are on the same WiFi network |
+| Can't find IP address | Tap the IP address on server device to refresh |
+| Frequent disconnections | Check WiFi signal strength, move closer to router |
+
+---
+
+*For more information or to report issues, visit the [Benchminer GitHub repository](https://github.com/dev4excite/Benchminer).*

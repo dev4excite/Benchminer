@@ -45,7 +45,7 @@ Based on the profitability results, decide which coin you want to mine. Consider
 - Current market conditions
 
 <!-- Screenshot: Benchmark screen showing profit estimates -->
-![Benchmark Screen](images/bench_screen.png)
+<img src="images/bench_screen.png" width="300">
 
 ---
 
@@ -106,7 +106,7 @@ Choose which hardware to use:
 Check the **Info** tab to see which backends your device supports for each algorithm.
 
 <!-- Screenshot: Miner tab with settings filled in -->
-![Miner Setup](images/miner_setup.png)
+<img src="images/miner_setup.png" width="300">
 
 ### 3.3 Start and Monitor
 
@@ -118,7 +118,7 @@ Check the **Info** tab to see which backends your device supports for each algor
    - **Errors:** Rejected or failed submissions
 
 <!-- Screenshot: Mining monitor showing hashrate and stats -->
-![Mining Running](images/miner_running.png)
+<img src="images/miner_running.png" width="300">
 
 3. To stop mining, tap the **Stop** button or press the back button
 
@@ -191,7 +191,7 @@ All devices must be on the same local network (WiFi).
 Share the IP address and port with your node devices.
 
 <!-- Screenshot: Cluster server mode setup -->
-![Cluster Server Setup](images/cluster_server.png)
+<img src="images/cluster_server.png" width="300">
 
 #### Node Setup
 
@@ -208,7 +208,7 @@ On each node device:
 Once connected, the node will start mining automatically.
 
 <!-- Screenshot: Cluster node mode setup -->
-![Cluster Node Setup](images/cluster_node.png)
+<img src="images/cluster_node.png" width="300">
 
 #### Monitor Cluster Mining
 

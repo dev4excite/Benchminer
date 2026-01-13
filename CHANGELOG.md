@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v3.0.5] - 2026-01-13
+### Fixed
+- Input text trim and sanitization
+
 ## [v3.0.4] - 2026-01-03
 ### Added
 - RandomX algorithm support (CPU)

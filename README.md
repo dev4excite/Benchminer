@@ -2,6 +2,8 @@
 
 Cryptocurrency mining and benchmarking app for Android devices.
 
+[benchminer.com](https://benchminer.com)
+
 This repository provides the **Full Version** with both benchmark and mining features.
 
 ## Download

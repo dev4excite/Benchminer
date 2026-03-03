@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v3.1.1] - 2026-03-03
+### Changed
+- New app icon and splash screen
+
+### Fixed
+- Benchmark crash fixes and stability improvements
+- Network compatibility fix for Android 7.0
+
 ## [v3.0.5] - 2026-01-13
 ### Fixed
 - Input text trim and sanitization

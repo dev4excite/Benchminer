@@ -16,6 +16,7 @@ Download the latest APK from the [Releases](https://github.com/dev4excite/Benchm
 - **Profit Estimation**: View estimated monthly earnings based on measured hashrate
 - **Mining**: Connect to mining pools and mine cryptocurrency
 - **Cluster Mode**: Connect multiple devices for distributed mining
+- **Battery Protection**: Automatically pause and resume mining based on battery level
 
 ## Supported Algorithms
 
@@ -25,14 +26,15 @@ Download the latest APK from the [Releases](https://github.com/dev4excite/Benchm
 | Verushash | O | O | - | - | - |
 | Ghostrider | O | - | - | - | - |
 | RandomX | O | - | - | - | - |
+| AstroBWT | O | - | - | - | - |
 
-> **Note:** RandomX is supported from v3.x.x.
+> **Note:** RandomX is supported from v3.x.x, AstroBWT from v4.x.x.
 
 GPU backend support (OpenCL, Vulkan, Metal, Cuda) varies by device. Check the **Info** tab in the app.
 
 ## System Requirements
 
-- Android 6.0 (Marshmallow) or higher
+- Android 7.0 (Nougat) or higher
 - Minimum 2GB RAM
 - 100MB+ storage space
 
